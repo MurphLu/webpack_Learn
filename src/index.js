@@ -8,6 +8,8 @@ import toml from './data.toml';
 import yaml from './data.yaml';
 import json from './data.json5';
 
+import printMe from './print.js';
+
 function component() {
     var element = document.createElement('div');
 
@@ -24,6 +26,11 @@ function component() {
     console.log(toml);
     console.log(yaml);
     console.log(json);
+
+    const btn = document.createElement('button');
+    btn.innerHTML = 'click to check import func';
+    btn.onclick = printMe;
+    element.appendChild(btn);
     return element
 }
 
