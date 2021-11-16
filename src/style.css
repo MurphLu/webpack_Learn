@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'testFont';
+    src: url('./Trattatello.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+.hello {
+    color: green;
+    font-family: 'testFont';
+    background: url('./image.png');
+}
