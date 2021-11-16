@@ -7,9 +7,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        index: { import: './src/index.js', dependOn: 'shared'}, 
-        print: {import: './src/print.js', dependOn: 'shared'},
-        shared : 'lodash'
+        index: './src/index.js',
+        print: './src/print.js',
     },
     output: {
         filename: '[name].bundle.js',
@@ -17,7 +16,9 @@ module.exports = {
         clean: true,
     },
     optimization: {
-        runtimeChunk: 'single',
+        splitChunks: {
+            chunks: 'all',
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({
